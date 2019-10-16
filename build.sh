@@ -16,11 +16,11 @@ status=$(curl -s --head -w %{http_code} https://oplab9.parqtec.unicamp.br/pub/pp
 
 # if [  $status == 404 ] 
 # then
-    echo "VALIDACAO 1"
-    sudo apt install -y lftp
+    # echo "VALIDACAO 1"
+    # sudo apt install -y lftp
     
-    echo "VALIDACAO 2"
-    status=$(curl -s --head -w %{http_code} https://oplab9.parqtec.unicamp.br/pub/ppc64el/docker/version-$github_version -o /dev/null)
+    # echo "VALIDACAO 2"
+    # status=$(curl -s --head -w %{http_code} https://oplab9.parqtec.unicamp.br/pub/ppc64el/docker/version-$github_version -o /dev/null)
     
     # echo "VALIDACAO 3"
     # if [[ $status == 404 ]]
@@ -31,7 +31,7 @@ status=$(curl -s --head -w %{http_code} https://oplab9.parqtec.unicamp.br/pub/pp
     # fi
     
     echo "VALIDACAO 4"
-    wget https://codeload.github.com/docker/docker-ce/zip/v$github_version
+    wget https://github.com/docker/docker-ce/archive/v$github_version.zip
     
     echo "VALIDACAO 5"
     unzip docker-ce-$github_version.zip
@@ -39,8 +39,8 @@ status=$(curl -s --head -w %{http_code} https://oplab9.parqtec.unicamp.br/pub/pp
     echo "VALIDACAO 6"
     mv docker-ce-$github_version docker-ce
     
-    # echo "VALIDACAO 7"
-    # cd docker-ce && git apply --3way ../patches/*
+    echo "VALIDACAO 7"
+    cd docker-ce && git apply --3way ../patches/*
     
     echo "VALIDACAO 8"
     cd $dir
