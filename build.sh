@@ -31,7 +31,7 @@ status=$(curl -s --head -w %{http_code} https://oplab9.parqtec.unicamp.br/pub/pp
     # fi
     
     echo "VALIDACAO 4"
-    wget https://github.com/docker/docker-ce/archive/v$github_version.zip
+    wget https://codeload.github.com/docker/docker-ce/zip/v$github_version
     
     echo "VALIDACAO 5"
     unzip docker-ce-$github_version.zip
