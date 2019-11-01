@@ -9,9 +9,9 @@ os: linux-ppc64le
 sudo: required
 services: 
   - docker
-  - docker-ce-cli
+  - docker-cli
 language: go
 
 script:
-  - python3 ftp_version.py
-  - bash build.sh
+  - docker info
+  - docker-cli
