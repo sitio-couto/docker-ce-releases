@@ -1,4 +1,14 @@
 import requests
+
+# Define the FTP URL for downloading and uploading packages
+ftp_path = 'https://oplab9.parqtec.unicamp.br/pub/ppc64el/docker'
+
+# Retrieve the link from the cli package
+cli_html = str(requests.get(ftp_path + "/deb/ubuntu-bionic/"))
+origin = cli_html.find("docker-ce-cli")    
+cli = cli_html[origin:origin+cli_html.find('"')]:
+cli = ftp_path + "/deb/ubuntu-bionic/" + cli # CLI download URL
+
 # find and save the current Github release
 html = str(
            requests.get('https://github.com/docker/docker-ce/releases/latest')

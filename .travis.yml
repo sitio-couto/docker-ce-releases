@@ -7,7 +7,10 @@ matrix:
   
 os: linux-ppc64le
 sudo: required
-services: docker
+services: 
+  - docker
+  - docker-ce-cli
+language: go
 
 script:
   - python3 ftp_version.py
