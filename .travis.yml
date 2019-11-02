@@ -8,10 +8,17 @@ matrix:
     - sys=ubuntu-xenial 
     - dir=docker-ce/components/packaging/deb 
     - bin_dir=docker-ce/components/packaging/deb/debbuild/ubuntu-xenial/
-  - env: sys=ubuntu-bionic dir=docker-ce/components/packaging/deb bin_dir=docker-ce/components/packaging/deb/debbuild/ubuntu-bionic/
-  - env: sys=centos dir=docker-ce/components/packaging/rpm bin_dir=docker-ce/components/packaging/rpm/rpmbuild/RPMS/ppc64le
+  - env: 
+    - sys=ubuntu-bionic 
+    - dir=docker-ce/components/packaging/deb 
+    - bin_dir=docker-ce/components/packaging/deb/debbuild/ubuntu-bionic/
+  - env: 
+    - sys=centos 
+    - dir=docker-ce/components/packaging/rpm 
+    - bin_dir=docker-ce/components/packaging/rpm/rpmbuild/RPMS/ppc64le
   
 os: linux-ppc64le
+dist: bionic
 sudo: required
 services: docker
 
