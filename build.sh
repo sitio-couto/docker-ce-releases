@@ -1,25 +1,23 @@
-github_version="18.09.7"
+github_version=$(cat github_version.txt)
 ftp_version=$(cat ftp_version.txt)
-del_version=$(cat delete_version.txt)
+# del_version=$(cat delete_version.txt)
+cli_version=$(cat cli_version.txt)
 
-echo "===> Downloading docker-ce version $github_version"
-wget https://codeload.github.com/docker/docker-ce/zip/v$github_version
+echo "===> Clonning docker-ce repo"
+git clone https://github.com/docker/docker-ce
 
-echo "===> Unziping docker-ce version $github_version"
-unzip v$github_version
+echo "===> Checking out to docker-ce version $github_version"
+cd docker-ce && git checkout v$github_version
 
-echo "===> Renaming docker-ce folder"
-mv docker-ce-$github_version docker-ce
+# echo "===> Downloading and installing docker-ce-cli from FTP"
+# wget https://oplab9.parqtec.unicamp.br/pub/ppc64el/docker/deb/ubuntu-bionic/$cli_version
+# sudo apt install ./$cli_version
+# rm $cli_version
 
-echo "VALIDACAO 8"
+echo "===> Moving to $dir and building $sys package"
 cd $dir
-
-echo "VALIDACAO 9"
 VERSION=$github_version make $sys
 
-echo "VALIDACAO 10"
-cd ../../../
-
-echo "VALIDACAO 11"
+echo "===> Moving to built pakcages folder"
 cd $bin_dir
-
+ls
