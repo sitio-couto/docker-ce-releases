@@ -16,5 +16,6 @@ sudo: required
 services: docker
 
 script:
+  - pwd
   - python3 ftp_version.py
   - bash build.sh
