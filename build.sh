@@ -4,25 +4,20 @@ ftp_version=$(cat ftp_version.txt)
 # del_version=$(cat delete_version.txt)
 cli_version=$(cat cli_version.txt)
 
-echo "===> Installing Docker"
+echo "=========> [INSTALLING DOCKER] >>> "
 git clone https://github.com/Unicamp-OpenPower/docker.git
 sudo snap install docker
 
-echo "===> Clonning docker-ce repo"
+echo "=========> [CLONNING DOCKER-CE REPO] >>>"
 git clone https://github.com/docker/docker-ce
 
-echo "===> Checking out to docker-ce version $github_version"
+echo "=========> [CHECKING OUT TO VERSION <$github_version>] >>>"
 cd docker-ce && git checkout v$github_version
 
-# echo "===> Downloading and installing docker-ce-cli from FTP"
-# wget https://oplab9.parqtec.unicamp.br/pub/ppc64el/docker/deb/ubuntu-bionic/$cli_version
-# sudo apt install ./$cli_version
-# rm $cli_version
-
-echo "===> Moving to $dir and building $sys package"
+echo "=========> [MOVING TO <$dir> AND BUILDING <$sys> PACKAGE]"
 cd $home_dir/$dir
 VERSION=$github_version make $sys
 
-echo "===> Moving to built pakcages folder"
+echo "=========> [MOVING TO BUILT PACKAGES FOLDER] >>>"
 cd $home_dir/$bin_dir
 ls
