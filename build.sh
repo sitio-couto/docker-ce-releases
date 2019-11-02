@@ -14,7 +14,10 @@ git clone https://github.com/docker/docker-ce
 echo "=========> [CHECKING OUT TO VERSION <$github_version>] >>>"
 cd docker-ce && git checkout v$github_version
 
-echo "=========> [MOVING TO <$dir> AND BUILDING <$sys> PACKAGE]"
+echo "=========> [APPLYING PATCHES] >>>"
+git apply --3way ../patches/*
+
+echo "=========> [MOVING TO <$dir> AND BUILDING <$sys> PACKAGE] >>>"
 cd $home_dir/$dir
 VERSION=$github_version make $sys
 
