@@ -1,3 +1,4 @@
+home_dir=$(pwd)
 github_version=$(cat github_version.txt)
 ftp_version=$(cat ftp_version.txt)
 # del_version=$(cat delete_version.txt)
@@ -15,9 +16,9 @@ cd docker-ce && git checkout v$github_version
 # rm $cli_version
 
 echo "===> Moving to $dir and building $sys package"
-cd $dir
+cd $home_dir/$dir
 VERSION=$github_version make $sys
 
 echo "===> Moving to built pakcages folder"
-cd $bin_dir
+cd $home_dir/$bin_dir
 ls
