@@ -4,6 +4,10 @@ ftp_version=$(cat ftp_version.txt)
 # del_version=$(cat delete_version.txt)
 cli_version=$(cat cli_version.txt)
 
+echo "===> Installing Docker"
+git clone https://github.com/Unicamp-OpenPower/docker.git
+cd docker && sudo -i ./install_docker.sh
+
 echo "===> Clonning docker-ce repo"
 git clone https://github.com/docker/docker-ce
 

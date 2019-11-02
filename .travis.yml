@@ -18,9 +18,7 @@ matrix:
     - bin_dir=docker-ce/components/packaging/rpm/rpmbuild/RPMS/ppc64le
   
 os: linux-ppc64le
-dist: bionic
 sudo: required
-services: docker
 
 script:
   - python3 ftp_version.py
