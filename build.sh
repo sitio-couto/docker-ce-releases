@@ -7,6 +7,7 @@ cli_version=$(cat cli_version.txt)
 echo "===> Installing Docker"
 git clone https://github.com/Unicamp-OpenPower/docker.git
 cd docker && sudo -i ./install_docker.sh
+cd ..
 
 echo "===> Clonning docker-ce repo"
 git clone https://github.com/docker/docker-ce
