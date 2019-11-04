@@ -6,7 +6,7 @@ ftp_ver=$(cat ftp_version.txt)
 # del_version=$(cat delete_version.txt)
 
 echo "=========> [CHECKING IF BUILD EXISTS] >>> "
-$status=(curl -s --head -w %{http_code} $ftp_path/version-$git_ver/$sys -o /dev/null) 
+$status=$(curl -s --head -w %{http_code} $ftp_path/version-$git_ver/$sys -o /dev/null) 
 if [ $status == 404 ] 
 then
 
