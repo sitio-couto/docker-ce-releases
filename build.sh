@@ -1,26 +1,37 @@
+ftp_path="https://oplab9.parqtec.unicamp.br/pub/test/vinicius/docker/"
+
 home_dir=$(pwd)
-github_version=$(cat github_version.txt)
-ftp_version=$(cat ftp_version.txt)
+git_ver=$(cat github_version.txt)
+ftp_ver=$(cat ftp_version.txt)
 # del_version=$(cat delete_version.txt)
-cli_version=$(cat cli_version.txt)
 
-echo "=========> [INSTALLING DOCKER] >>> "
-git clone https://github.com/Unicamp-OpenPower/docker.git
-sudo snap install docker
+echo "=========> [CHECKING IF BUILD EXISTS] >>> "
+$status=(curl -s --head -w %{http_code} $ftp_path/version-$git_ver/$sys -o /dev/null) 
+if [ $status == 404 ] 
+then
 
-echo "=========> [CLONNING DOCKER-CE REPO] >>>"
-git clone https://github.com/docker/docker-ce
+    echo "=========> [CREATING FTP FOLDER] >>> "
+    sudo apt install -y lftp
+    lftp -c "open -u $USER,$PASS $ftp_path; mkdir -p version-$git_ver/$sys"
 
-echo "=========> [CHECKING OUT TO VERSION <$github_version>] >>>"
-cd docker-ce && git checkout v$github_version
+    echo "=========> [INSTALLING DOCKER] >>> "
+    git clone https://github.com/Unicamp-OpenPower/docker.git
+    sudo snap install docker
 
-echo "=========> [APPLYING PATCHES] >>>"
-git apply -v --3way ../patches/*
+    echo "=========> [CLONNING <$git_ver> AND PATCHING] >>>"
+    git clone https://github.com/docker/docker-ce
+    cd docker-ce && git checkout v$git_ver
+    git apply -v --3way ../patches/*
 
-echo "=========> [MOVING TO <$dir> AND BUILDING <$sys> PACKAGE] >>>"
-cd $home_dir/$dir
-VERSION=$github_version make $sys
+    echo "=========> [BUILDING <$sys> PACKAGES] >>>"
+    cd $home_dir/$dir
+    VERSION=$git_ver make $sys
 
-echo "=========> [MOVING TO BUILT PACKAGES FOLDER] >>>"
-cd $home_dir/$bin_dir
-ls
+    echo "=========> [SENDING PACKAGES TO FTP] >>>"
+    cd $home_dir/$bin_dir
+    lftp -c "open -u $USER,$PASS $ftp_path/version-$git_ver/$sys; mirror -R ./ ./"
+
+fi
+
+echo "=========> [DONE]"
+exit 0
