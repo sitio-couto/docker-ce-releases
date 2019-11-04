@@ -1,4 +1,5 @@
-ftp_path="https://oplab9.parqtec.unicamp.br/pub/test/vinicius/docker/"
+ftp_path="ftp://oplab9.parqtec.unicamp.br/test/vinicius/docker"
+url="https://oplab9.parqtec.unicamp.br/pub/test/vinicius/docker"
 
 home_dir=$(pwd)
 git_ver=$(cat github_version.txt)
@@ -6,7 +7,7 @@ ftp_ver=$(cat ftp_version.txt)
 # del_version=$(cat delete_version.txt)
 
 echo "=========> [CHECKING IF BUILD EXISTS] >>> "
-status=$(curl -s --head -w %{http_code} $ftp_path/version-$git_ver/$sys -o /dev/null) 
+status=$(curl -s --head -w %{http_code} $url/version-$git_ver/$sys -o /dev/null) 
 if [ $status == 404 ] 
 then
 
