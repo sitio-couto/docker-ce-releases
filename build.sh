@@ -1,5 +1,7 @@
 home_dir=$(pwd)
 
+set -e # Exit if error
+
 echo "=========> [INSTALLING DOCKER] >>> "
 git clone https://github.com/Unicamp-OpenPower/docker.git
 sudo snap install docker
