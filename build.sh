@@ -1,9 +1,5 @@
 home_dir=$(pwd)
 
-echo "=========> [CREATING FTP FOLDER] >>> "
-sudo apt install -y lftp
-lftp -c "open -u $USER,$PASS $ftp_path; mkdir -p version-$git_ver/$sys"
-
 echo "=========> [INSTALLING DOCKER] >>> "
 git clone https://github.com/Unicamp-OpenPower/docker.git
 sudo snap install docker
