@@ -20,6 +20,10 @@ matrix:
 os: linux-ppc64le
 sudo: required
 
+install:
+  - sudo apt update
+  - sudo apt install install python3
+
 script:
   - python3 ftp_version.py
   - bash build.sh
