@@ -1,3 +1,4 @@
+set -e
 ftp_path="ftp://oplab9.parqtec.unicamp.br/test/vinicius/docker"
 url="https://oplab9.parqtec.unicamp.br/pub/test/vinicius/docker"
 

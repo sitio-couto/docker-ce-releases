@@ -17,7 +17,6 @@ def get_info(path, regex, name, cut=(lambda x : x)):
     file.close()
 
 # Define the FTP URL for downloading and uploading packages
-# ftp_path = 'https://oplab9.parqtec.unicamp.br/pub/ppc64el/docker'
 ftp_path = 'https://oplab9.parqtec.unicamp.br/pub/test/vinicius/docker'
 git_path = 'https://github.com/docker/docker-ce/releases/latest'
 
