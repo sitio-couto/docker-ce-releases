@@ -21,8 +21,8 @@ os: linux-ppc64le
 sudo: required
 
 install:
-  - apt update
-  - pip install requests
+  - sudo apt update
+  - sudo pip install requests
 
 script:
   - python3 ftp_version.py
