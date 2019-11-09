@@ -22,7 +22,7 @@ sudo: required
 
 install:
   - sudo apt update
-  - sudo pip3 install requests
+  - sudo apt install python3.6
 
 script:
   - python3 ftp_version.py
