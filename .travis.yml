@@ -21,4 +21,5 @@ os: linux-ppc64le
 sudo: required
 
 script:
+  - python3 ftp_version.py
   - bash build.sh
