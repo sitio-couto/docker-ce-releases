@@ -1,4 +1,4 @@
-from urllib.request as request 
+import urllib.request as request 
 from re import findall
 
 # function get_info
@@ -18,7 +18,7 @@ def get_info(path, regex, name, cut=(lambda x : x)):
 
 # Define the FTP URL for downloading and uploading packages
 # ftp_path = 'https://oplab9.parqtec.unicamp.br/pub/ppc64el/docker'
-ftp_path = 'https://oplab9.parqtec.unicamp.br/pub/test/vinicius/'
+ftp_path = 'https://oplab9.parqtec.unicamp.br/pub/test/vinicius/docker'
 git_path = 'https://github.com/docker/docker-ce/releases/latest'
 
 # find and save the current Github release
