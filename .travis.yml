@@ -1,3 +1,8 @@
+
+os: linux
+arch: ppc64le
+sudo: required
+
 matrix:
   include:
   - env: 
@@ -16,9 +21,6 @@ matrix:
     - sys=centos 
     - dir=docker-ce/components/packaging/rpm 
     - bin_dir=docker-ce/components/packaging/rpm/rpmbuild/RPMS/ppc64le
-  
-os: linux-ppc64le
-sudo: required
 
 script:
   - python3 ftp_version.py
