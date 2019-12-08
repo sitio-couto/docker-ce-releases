@@ -3,7 +3,7 @@ set -e
 echo "=========> [INSTALLING DOCKER] >>> "
 git clone https://github.com/Unicamp-OpenPower/docker.git
 sudo snap install docker
-service docker status
+sudo service docker status
 sudo docker run hello-world
 
 echo "=========> [CLONNING MASTER AND PATCHING] >>>"
