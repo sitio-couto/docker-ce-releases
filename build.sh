@@ -11,4 +11,4 @@ cd ../
 
 echo "=========> [BUILDING <$sys> PACKAGES] >>>"
 cd ./$dir
-make $sys
+sudo make $sys
