@@ -1,6 +1,6 @@
-From 82657a3e68df66510354d8ea310c89e4b43ca19f Mon Sep 17 00:00:00 2001
-From: Vinicius Espindola <vinicius.c.e@hotmail.com>
-Date: Sun, 3 Nov 2019 01:32:37 +0000
+From 2ce76df18d662f41082e1f1742a2391feb5326db Mon Sep 17 00:00:00 2001
+From: vinicius espindola <vinicius.c.e@hotmail.com>
+Date: Sun, 8 Dec 2019 17:40:33 -0300
 Subject: [PATCH 1/1] use community containerd versions
 
 ---
@@ -9,7 +9,7 @@ Subject: [PATCH 1/1] use community containerd versions
  2 files changed, 2 insertions(+), 2 deletions(-)
 
 diff --git a/components/packaging/deb/common/control b/components/packaging/deb/common/control
-index aa0e943679..56bd1fa880 100644
+index a540fc20d0..efdae67ace 100644
 --- a/components/packaging/deb/common/control
 +++ b/components/packaging/deb/common/control
 @@ -27,7 +27,7 @@ Vcs-Git: git://github.com/docker/docker.git
@@ -18,7 +18,7 @@ index aa0e943679..56bd1fa880 100644
  Architecture: linux-any
 -Depends: docker-ce-cli, containerd.io (>= 1.2.2-3), iptables, libseccomp2 (>= 2.3.0), ${shlibs:Depends}
 +Depends: docker-ce-cli, containerd (>= 1.2), iptables, libseccomp2 (>= 2.3.0), ${shlibs:Depends}
- Recommends: aufs-tools,
+ Recommends: aufs-tools [amd64],
              ca-certificates,
              cgroupfs-mount | cgroup-lite,
 diff --git a/components/packaging/rpm/SPECS/docker-ce.spec b/components/packaging/rpm/SPECS/docker-ce.spec
@@ -36,5 +36,4 @@ index 83e8ec767f..3dbf4af45c 100644
  
 -- 
 2.17.1
-
 
