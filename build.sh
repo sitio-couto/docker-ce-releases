@@ -1,10 +1,7 @@
 set -e
 
-sudo docker run hello-world
-
-echo "=========> [INSTALLING DOCKER] >>> "
-git clone https://github.com/Unicamp-OpenPower/docker.git
-sudo snap install docker
+echo "=========> [CHECKING DOCKER] >>> "
+sudo docker run hello-world | grep "Hello from Docker!" 
 
 echo "=========> [CLONNING MASTER AND PATCHING] >>>"
 git clone https://github.com/docker/docker-ce
