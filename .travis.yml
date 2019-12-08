@@ -22,5 +22,4 @@ matrix:
     - bin_dir=docker-ce/components/packaging/rpm/rpmbuild/RPMS/ppc64le
 
 script:
-  - python3 ftp_version.py
   - bash build.sh
