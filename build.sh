@@ -8,9 +8,8 @@ echo "=========> [CLONNING MASTER AND PATCHING] >>>"
 git clone https://github.com/docker/docker-ce
 cd docker-ce && git apply -v --3way ../patches/*
 cd ../
+sudo docker run hello-world
 
 echo "=========> [BUILDING <$sys> PACKAGES] >>>"
 cd ./$dir
-echo "We're at $(pwd)"
-make 
 sudo make $sys
