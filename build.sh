@@ -11,4 +11,6 @@ cd ../
 
 echo "=========> [BUILDING <$sys> PACKAGES] >>>"
 cd ./$dir
+echo "We're at $(pwd)"
+make 
 sudo make $sys
