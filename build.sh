@@ -11,6 +11,7 @@ cd ../
 echo "=========> [BUILDING <$sys> PACKAGES] >>>"
 cd ./$dir
 sudo make $sys
+cd ../
 
 echo "=========> [CHECKING <$sys> PACKAGES] >>>"
-ls ~/$bin_dir
+ls $bin_dir
