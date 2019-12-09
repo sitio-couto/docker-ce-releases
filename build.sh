@@ -1,4 +1,5 @@
 set -e
+home=$(pwd)
 
 echo "=========> [CHECKING DOCKER] >>> "
 sudo docker run hello-world | grep "Hello from Docker!" 
@@ -14,10 +15,4 @@ sudo make $sys
 cd ../
 
 echo "=========> [CHECKING <$sys> PACKAGES] >>>"
-ls && cd docker-ce
-ls && cd components
-ls && cd packaging
-ls && cd deb
-ls && cd debbuild
-ls
-ls $bin_dir
+ls $home/$bin_dir
