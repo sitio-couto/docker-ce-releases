@@ -14,4 +14,10 @@ sudo make $sys
 cd ../
 
 echo "=========> [CHECKING <$sys> PACKAGES] >>>"
+ls && cd docker-ce
+ls && cd components
+ls && cd packaging
+ls && cd deb
+ls && cd debbuild
+ls
 ls $bin_dir
