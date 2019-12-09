@@ -13,4 +13,4 @@ cd ./$dir
 sudo make $sys
 
 echo "=========> [CHECKING <$sys> PACKAGES] >>>"
-ls ./$bin_dir
+ls ~/$bin_dir
