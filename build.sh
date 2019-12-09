@@ -1,8 +1,8 @@
 set -e
 home=$(pwd)
 
-echo "=========> [CHECKING DOCKER] >>> "
-sudo docker run hello-world | grep "Hello from Docker!" 
+# echo "=========> [CHECKING DOCKER] >>> "
+# sudo docker run hello-world | grep "Hello from Docker!" 
 
 echo "=========> [CLONNING MASTER AND PATCHING] >>>"
 git clone https://github.com/docker/docker-ce
