@@ -11,7 +11,7 @@ cd ../
 
 echo "=========> [BUILDING <$sys> PACKAGES] >>>"
 cd ./$dir
-sudo make $sys
+sudo make VERSION=0.0.0 $sys
 cd ../
 
 echo "=========> [CHECKING <$sys> PACKAGES] >>>"
