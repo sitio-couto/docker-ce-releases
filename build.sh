@@ -12,7 +12,6 @@ cd ../
 echo "=========> [BUILDING <$sys> PACKAGES] >>>"
 cd ./$dir
 sudo make VERSION=0.0.0 $sys
-cd ../
 
 echo "=========> [CHECKING <$sys> PACKAGES] >>>"
 ls $home/$bin_dir
