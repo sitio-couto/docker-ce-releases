@@ -5,8 +5,7 @@ echo "=========> [CHECKING DOCKER] >>> "
 sudo docker run hello-world | grep "Hello from Docker!" 
 
 echo "=========> [REMOVING DOCKER] >>> "
-sudo apt-get purge -y docker-engine docker docker.io docker-ce  
-sudo apt-get autoremove -y --purge docker-engine docker docker.io docker-ce 
+sudo apt-get purge docker-ce 
 exit
 
 echo "=========> [CLONNING MASTER AND PATCHING] >>>"
