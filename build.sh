@@ -6,7 +6,7 @@ sudo docker run hello-world | grep "Hello from Docker!"
 
 echo "=========> [REMOVING DOCKER] >>> "
 sudo apt list --installed | grep docker
-sudo apt-get purge docker.io
+sudo apt-get purge docker.io && sudo apt autoremove
 exit
 
 echo "=========> [CLONNING MASTER AND PATCHING] >>>"
