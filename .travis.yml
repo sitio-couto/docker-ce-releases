@@ -1,7 +1,6 @@
 os: linux
 arch: ppc64le
 sudo: required
-services: docker
 
 matrix:
   include:

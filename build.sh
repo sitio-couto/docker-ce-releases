@@ -1,8 +1,13 @@
-set -e
+# set -e
 home=$(pwd)
 
-# echo "=========> [CHECKING DOCKER] >>> "
-# sudo docker run hello-world | grep "Hello from Docker!" 
+echo "=========> [CHECKING DOCKER] >>> "
+sudo docker run hello-world | grep "Hello from Docker!" 
+
+echo "=========> [REMOVING DOCKER] >>> "
+sudo apt-get purge -y docker-engine docker docker.io docker-ce  
+sudo apt-get autoremove -y --purge docker-engine docker docker.io docker-ce 
+exit
 
 echo "=========> [CLONNING MASTER AND PATCHING] >>>"
 git clone https://github.com/docker/docker-ce
