@@ -1,5 +1,6 @@
 set -e
 home=$(pwd)
+sudo yum update && sudo yum upgrade
 
 echo "=========> [CHECKING DOCKER] >>> "
 sudo docker run hello-world | grep "Hello from Docker!" 
@@ -11,7 +12,8 @@ cd ../
 
 echo "=========> [BUILDING <$sys> PACKAGES] >>>"
 cd ./$dir
-sudo make $sys
+echo "'sudo make $sys' at '$pwd'"
+echo "-----------------------------------------"
 cd ../
 
 echo "=========> [CHECKING <$sys> PACKAGES] >>>"
