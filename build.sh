@@ -14,6 +14,7 @@ echo "=========> [BUILDING <$sys> PACKAGES] >>>"
 cd ./$dir
 echo "'sudo make $sys' at '$pwd'"
 echo "-----------------------------------------"
+sudo VERSION=0.0.0 make $sys 
 cd ../
 
 echo "=========> [CHECKING <$sys> PACKAGES] >>>"
