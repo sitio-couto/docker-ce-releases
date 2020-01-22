@@ -2,6 +2,7 @@ set -e
 home=$(pwd)
 
 echo "=========> [UPDATING PACKAGES] >>>"
+sudo lsb_release -a
 sudo yum update && sudo yum upgrade
 sudo yum clean all
 
