@@ -14,12 +14,10 @@ git clone https://github.com/docker/docker-ce
 cd docker-ce && git apply -v --3way ../patches/*
 cd ../
 
-# echo "=========> [BUILDING <$sys> PACKAGES] >>>"
-# cd ./$dir
-# echo "'make $sys' at '$pwd'"
-# echo "-----------------------------------------"
-# VERSION=0.0.0 make $sys 
-# cd ../
+echo "=========> [BUILDING <$sys> PACKAGES] >>>"
+cd ./$dir
+VERSION=0.0.0 make $sys 
+cd ../
 
 # echo "=========> [CHECKING <$sys> PACKAGES] >>>"
 # ls $home/$bin_dir
