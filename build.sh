@@ -7,6 +7,7 @@ wget https://oplab9.parqtec.unicamp.br/pub/ppc64el/docker/version-19.03.5/ubuntu
 sudo apt install ./*.deb
 
 echo "=========> [CHECKING DOCKER] >>> "
+sudo service docker restart
 docker run hello-world | grep "Hello from Docker!" 
 
 echo "=========> [CLONNING MASTER AND PATCHING] >>>"
