@@ -1,9 +1,13 @@
 set -e
 home=$(pwd)
-sudo su
+
+echo "=========> [UPGRADING DOCKER] >>>"
+wget https://oplab9.parqtec.unicamp.br/pub/ppc64el/docker/version-19.03.5/ubuntu-bionic/docker-ce-cli_19.03.5~3-0~ubuntu-bionic_ppc64el.deb
+wget https://oplab9.parqtec.unicamp.br/pub/ppc64el/docker/version-19.03.5/ubuntu-bionic/docker-ce_19.03.5~3-0~ubuntu-bionic_ppc64el.deb
+sudo apt install ./*.deb
 
 echo "=========> [CHECKING DOCKER] >>> "
-sudo docker run hello-world | grep "Hello from Docker!" 
+docker run hello-world | grep "Hello from Docker!" 
 
 echo "=========> [CLONNING MASTER AND PATCHING] >>>"
 git clone https://github.com/docker/docker-ce
@@ -12,9 +16,9 @@ cd ../
 
 echo "=========> [BUILDING <$sys> PACKAGES] >>>"
 cd ./$dir
-echo "'sudo make $sys' at '$pwd'"
+echo "'make $sys' at '$pwd'"
 echo "-----------------------------------------"
-sudo VERSION=0.0.0 make $sys 
+VERSION=0.0.0 make $sys 
 cd ../
 
 echo "=========> [CHECKING <$sys> PACKAGES] >>>"
