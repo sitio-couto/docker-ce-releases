@@ -7,6 +7,7 @@ home=$(pwd)
 # sudo apt install ./*.deb
 
 echo "=========> [CHECKING DOCKER] >>> "
+sudo docker login
 docker run hello-world | grep "Hello from Docker!" 
 
 echo "=========> [CLONNING MASTER AND PATCHING] >>>"
