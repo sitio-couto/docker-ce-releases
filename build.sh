@@ -1,6 +1,9 @@
 set -e
 home=$(pwd)
+
+echo "=========> [UPDATING PACKAGES] >>>"
 sudo yum update && sudo yum upgrade
+sudo yum clean all
 
 echo "=========> [CHECKING DOCKER] >>> "
 sudo docker run hello-world | grep "Hello from Docker!" 
