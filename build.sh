@@ -3,9 +3,9 @@ home=$(pwd)
 
 echo "=========> [UPGRADING DOCKER] >>>"
 sudo lsb_release -a
-wget https://oplab9.parqtec.unicamp.br/pub/ppc64el/docker/version-18.09.8/ubuntu-bionic/docker-ce-cli_18.09.8~3-0~ubuntu-bionic_ppc64el.deb > /dev/null
-wget https://oplab9.parqtec.unicamp.br/pub/ppc64el/docker/version-18.09.8/ubuntu-bionic/docker-ce_18.09.8~3-0~ubuntu-bionic_ppc64el.deb > /dev/null
-sudo apt install ./*.deb > /dev/null
+wget https://oplab9.parqtec.unicamp.br/pub/ppc64el/docker/version-19.03.5/ubuntu-bionic/docker-ce-cli_19.03.5~3-0~ubuntu-bionic_ppc64el.deb > /dev/null
+wget https://oplab9.parqtec.unicamp.br/pub/ppc64el/docker/version-19.03.5/ubuntu-bionic/docker-ce_19.03.5~3-0~ubuntu-bionic_ppc64el.deb > /dev/null
+sudo apt install ./*.deb
 
 echo "=========> [CHECKING DOCKER] >>> "
 docker run hello-world | grep "Hello from Docker!" 
