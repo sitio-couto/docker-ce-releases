@@ -3,8 +3,8 @@ home=$(pwd)
 
 echo "=========> [UPGRADING DOCKER] >>>"
 sudo lsb_release -a
-wget https://oplab9.parqtec.unicamp.br/pub/ppc64el/docker/version-18.03.9/ubuntu-bionic/docker-ce-cli_18.03.9~3-0~ubuntu-bionic_ppc64el.deb
-wget https://oplab9.parqtec.unicamp.br/pub/ppc64el/docker/version-18.03.9/ubuntu-bionic/docker-ce_18.03.9~3-0~ubuntu-bionic_ppc64el.deb
+wget https://oplab9.parqtec.unicamp.br/pub/ppc64el/docker/version-18.09.8/ubuntu-bionic/docker-ce-cli_18.09.8~3-0~ubuntu-bionic_ppc64el.deb
+wget https://oplab9.parqtec.unicamp.br/pub/ppc64el/docker/version-18.09.8/ubuntu-bionic/docker-ce_18.09.8~3-0~ubuntu-bionic_ppc64el.deb
 sudo apt install ./*.deb > /dev/null
 sudo service docker status
 
