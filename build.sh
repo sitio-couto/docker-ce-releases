@@ -1,9 +1,6 @@
 set -e
 home=$(pwd)
-
-echo "=========> [UPDATING PACKAGES] >>>"
-sudo lsb_release -a
-sudo apt update && sudo apt upgrade
+sudo su
 
 echo "=========> [CHECKING DOCKER] >>> "
 sudo docker run hello-world | grep "Hello from Docker!" 
