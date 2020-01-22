@@ -3,8 +3,7 @@ home=$(pwd)
 
 echo "=========> [UPDATING PACKAGES] >>>"
 sudo lsb_release -a
-sudo yum update && sudo yum upgrade
-sudo yum clean all
+sudo apt update && sudo apt upgrade
 
 echo "=========> [CHECKING DOCKER] >>> "
 sudo docker run hello-world | grep "Hello from Docker!" 
