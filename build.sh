@@ -2,10 +2,11 @@ set -e
 home=$(pwd)
 
 echo "=========> [UPGRADING DOCKER] >>>"
+sudo lsb_release -a
 wget https://oplab9.parqtec.unicamp.br/pub/ppc64el/docker/version-19.03.5/ubuntu-bionic/docker-ce-cli_19.03.5~3-0~ubuntu-bionic_ppc64el.deb
 wget https://oplab9.parqtec.unicamp.br/pub/ppc64el/docker/version-19.03.5/ubuntu-bionic/docker-ce_19.03.5~3-0~ubuntu-bionic_ppc64el.deb
 sudo apt install ./*.deb
-sudo docker service status
+sudo service docker status
 
 echo "=========> [CHECKING DOCKER] >>> "
 docker run hello-world | grep "Hello from Docker!" 
