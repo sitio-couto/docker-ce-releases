@@ -1,10 +1,10 @@
 set -e
 home=$(pwd)
 
-echo "=========> [UPGRADING DOCKER] >>>"
+# echo "=========> [UPGRADING DOCKER] >>>"
 # sudo apt update && sudo apt upgrade
-sudo snap install docker
-sudo service docker restart
+# sudo snap install docker
+# sudo service docker restart
 
 echo "=========> [CHECKING ENVIRONMENT] >>> "
 printf "\nBuild Distro:\n"
