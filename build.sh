@@ -4,15 +4,17 @@ home=$(pwd)
 echo "=========> [UPGRADING DOCKER] >>>"
 # sudo apt update && sudo apt upgrade
 sudo snap install docker
-sudo service docker* restart
+sudo service docker restart
 
-# echo "=========> [CHECKING ENVIRONMENT] >>> "
-# printf "\nBuild Distro:\n"
-# lsb_release -a
-# printf "\nDocker Version:\n"
-# docker version
-# printf "\nDocker Test:\n"
-# docker run hello-world | grep "Hello from Docker!" 
+echo "=========> [CHECKING ENVIRONMENT] >>> "
+printf "\nBuild Distro:\n"
+lsb_release -a
+printf "\nDocker Version:\n"
+docker version
+printf "\nDocker Test:\n"
+sudo service docker* status
+sudo docker version
+docker run hello-world | grep "Hello from Docker!" 
 
 printf "\n=========> [CLONNING MASTER AND PATCHING] >>>\n"
 git clone https://github.com/docker/docker-ce

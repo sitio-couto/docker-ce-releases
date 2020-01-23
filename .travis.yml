@@ -1,6 +1,7 @@
 os: linux
 arch: ppc64le
 sudo: required
+dist: bionic
 
 matrix:
   include:
