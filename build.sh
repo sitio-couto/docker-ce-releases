@@ -3,7 +3,7 @@ home=$(pwd)
 
 echo "=========> [UPGRADING DOCKER] >>>"
 printf "\n\nRemoving Docker...\n"
-sudo docker service stop
+sudo service docker stop
 sudo apt-get remove docker docker-engine docker.io containerd runc
 sudo service docker status
 print "\n\Upgrading Docker...\n"
