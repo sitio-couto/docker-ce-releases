@@ -1,15 +1,11 @@
 set -e
 home=$(pwd)
 
-echo "=========> [UPGRADING DOCKER] >>>"
-printf "\n\nRemoving Docker...\n"
-sudo service docker stop
-sudo apt-get remove docker docker-engine docker.io containerd runc
-sudo service docker status
-print "\n\Upgrading Docker...\n"
-wget -q https://oplab9.parqtec.unicamp.br/pub/ppc64el/docker/version-19.03.5/ubuntu-bionic/docker-ce-cli_19.03.5~3-0~ubuntu-bionic_ppc64el.deb
-wget -q https://oplab9.parqtec.unicamp.br/pub/ppc64el/docker/version-19.03.5/ubuntu-bionic/docker-ce_19.03.5~3-0~ubuntu-bionic_ppc64el.deb
-sudo apt install ./*.deb
+# echo "=========> [UPGRADING DOCKER] >>>"
+# print "\n\Upgrading Docker...\n"
+# wget -q https://oplab9.parqtec.unicamp.br/pub/ppc64el/docker/version-19.03.5/ubuntu-bionic/docker-ce-cli_19.03.5~3-0~ubuntu-bionic_ppc64el.deb
+# wget -q https://oplab9.parqtec.unicamp.br/pub/ppc64el/docker/version-19.03.5/ubuntu-bionic/docker-ce_19.03.5~3-0~ubuntu-bionic_ppc64el.deb
+# sudo apt install ./*.deb
 
 echo "=========> [CHECKING ENVIRONMENT] >>> "
 printf "\n\nBuild Distro:\n"

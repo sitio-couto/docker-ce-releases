@@ -2,6 +2,7 @@
 arch: ppc64le
 sudo: required
 dist: bionic
+services: docker
 
 # matrix:
 #   include:
