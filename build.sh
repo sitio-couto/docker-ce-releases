@@ -3,7 +3,7 @@ home=$(pwd)
 sudo apt update && sudo apt upgrade
 
 echo "=========> [UPGRADING DOCKER] >>>"
-print "\n\nRemoving Docker...\n"
+printf "\n\nRemoving Docker...\n"
 sudo apt remove docker*
 sudo apt autoclean
 sudo apt autoremove
@@ -14,11 +14,11 @@ wget -q https://oplab9.parqtec.unicamp.br/pub/ppc64el/docker/version-19.03.5/ubu
 sudo apt install ./*.deb
 
 echo "=========> [CHECKING ENVIRONMENT] >>> "
-print "\n\nBuild Distro:\n"
+printf "\n\nBuild Distro:\n"
 lsb_release -a
-print "\n\nDocker Version:\n"
+printf "\n\nDocker Version:\n"
 docker version
-print "\n\nDocker Test:\n"
+printf "\n\nDocker Test:\n"
 docker run hello-world | grep "Hello from Docker!" 
 
 echo "=========> [CLONNING MASTER AND PATCHING] >>>"
