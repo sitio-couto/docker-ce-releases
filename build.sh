@@ -1,10 +1,11 @@
 set -e
 home=$(pwd)
+sudo apt update && sudo apt upgrade
 
 echo "=========> [UPGRADING DOCKER] >>>"
 wget -q https://oplab9.parqtec.unicamp.br/pub/ppc64el/docker/version-19.03.5/ubuntu-bionic/docker-ce-cli_19.03.5~3-0~ubuntu-bionic_ppc64el.deb
 wget -q https://oplab9.parqtec.unicamp.br/pub/ppc64el/docker/version-19.03.5/ubuntu-bionic/docker-ce_19.03.5~3-0~ubuntu-bionic_ppc64el.deb
-sudo dpkg --install *.deb
+sudo apt *.deb
 
 echo "=========> [CHECKING ENVIRONMENT] >>> "
 print "\n\nBuild Distro:\n"
