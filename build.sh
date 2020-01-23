@@ -8,21 +8,21 @@ home=$(pwd)
 # sudo apt install ./*.deb
 
 echo "=========> [CHECKING ENVIRONMENT] >>> "
-printf "\n\nBuild Distro:\n"
+printf "\nBuild Distro:\n"
 lsb_release -a
-printf "\n\nDocker Version:\n"
+printf "\nDocker Version:\n"
 docker version
-printf "\n\nDocker Test:\n"
+printf "\nDocker Test:\n"
 docker run hello-world | grep "Hello from Docker!" 
 
-echo "=========> [CLONNING MASTER AND PATCHING] >>>"
+printf "\n=========> [CLONNING MASTER AND PATCHING] >>>\n"
 git clone https://github.com/docker/docker-ce
 cd docker-ce && git apply -v --3way ../patches/*
 cd ../
 
-echo "=========> [BUILDING <ubuntu-bionic> PACKAGES] >>>"
+printf "\n=========> [BUILDING <ubuntu-bionic> PACKAGES] >>>\n"
 cd ./docker-ce/components/packaging/deb
-VERSION=0.0.0 make ubuntu-bionic 
+sudo make VERSION=0.0.0 ubuntu-bionic 
 cd ../
 
 # echo "=========> [CHECKING <$sys> PACKAGES] >>>"
