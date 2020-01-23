@@ -17,14 +17,12 @@ home=$(pwd)
 
 printf "\n=========> [CLONNING MASTER AND PATCHING] >>>\n"
 git clone https://github.com/docker/docker-ce
-cd docker-ce
+cd $home/docker-ce
 git apply -v --3way ../patches/*
-cd ../
 
-printf "\n=========> [BUILDING <ubuntu-bionic> PACKAGES] >>>\n"
-cd docker-ce/$dir
+printf "\n=========> [BUILDING <$sys> PACKAGES] >>>\n"
+cd $home/$dir
 VERSION=0.0.0 make $sys
-cd ../
 
 echo "=========> [CHECKING <$sys> PACKAGES] >>>"
 ls $home/$bin_dir
