@@ -1,8 +1,14 @@
-# os: linux
+os: linux
 arch: ppc64le
 sudo: required
 dist: xenial
 services: docker
+
+env: 
+  - sys=ubuntu-xenial 
+  - dir=docker-ce/components/packaging/deb 
+  - bin_dir=docker-ce/components/packaging/deb/debbuild/ubuntu-xenial
+  
 
 # matrix:
 #   include:
