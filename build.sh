@@ -1,12 +1,10 @@
 set -e
 home=$(pwd)
-sudo apt update && sudo apt upgrade
 
 echo "=========> [UPGRADING DOCKER] >>>"
 printf "\n\nRemoving Docker...\n"
-sudo apt remove docker*
-sudo apt autoclean
-sudo apt autoremove
+sudo docker service stop
+sudo apt-get remove docker docker-engine docker.io containerd runc
 sudo service docker status
 print "\n\Upgrading Docker...\n"
 wget -q https://oplab9.parqtec.unicamp.br/pub/ppc64el/docker/version-19.03.5/ubuntu-bionic/docker-ce-cli_19.03.5~3-0~ubuntu-bionic_ppc64el.deb
