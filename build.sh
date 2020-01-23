@@ -1,21 +1,11 @@
 set -e
 home=$(pwd)
 
-echo "=========> [DOCKER DEPENDENCIES] >>>"
-sudo apt install -f 
- > containerd
- > iptables
- > libseccomp2
- > libc6
- > libdevmapper1.02.1
- > libsystemd0
-
-
-# echo "=========> [UPGRADING DOCKER] >>>"
-# printf "\n\Upgrading Docker...\n"
-# wget -q https://oplab9.parqtec.unicamp.br/pub/ppc64el/docker/version-19.03.5/ubuntu-bionic/docker-ce-cli_19.03.5~3-0~ubuntu-bionic_ppc64el.deb
-# wget -q https://oplab9.parqtec.unicamp.br/pub/ppc64el/docker/version-19.03.5/ubuntu-bionic/docker-ce_19.03.5~3-0~ubuntu-bionic_ppc64el.deb
-# sudo apt install ./*.deb
+echo "=========> [UPGRADING DOCKER] >>>"
+wget -q https://oplab9.parqtec.unicamp.br/pub/ppc64el/docker/version-19.03.5/ubuntu-bionic/docker-ce-cli_19.03.5~3-0~ubuntu-bionic_ppc64el.deb
+wget -q https://oplab9.parqtec.unicamp.br/pub/ppc64el/docker/version-19.03.5/ubuntu-bionic/docker-ce_19.03.5~3-0~ubuntu-bionic_ppc64el.deb
+sudo apt install ./*.deb
+sudo docker version
 
 # echo "=========> [CHECKING ENVIRONMENT] >>> "
 # printf "\nBuild Distro:\n"
