@@ -3,11 +3,14 @@ home=$(pwd)
 sudo apt update && sudo apt upgrade
 
 echo "=========> [UPGRADING DOCKER] >>>"
+print "\n\nRemoving Docker...\n"
+sudo apt remove docker*
+sudo apt autoclean
+sudo apt autoremove
+sudo service docker status
+print "\n\Upgrading Docker...\n"
 wget -q https://oplab9.parqtec.unicamp.br/pub/ppc64el/docker/version-19.03.5/ubuntu-bionic/docker-ce-cli_19.03.5~3-0~ubuntu-bionic_ppc64el.deb
 wget -q https://oplab9.parqtec.unicamp.br/pub/ppc64el/docker/version-19.03.5/ubuntu-bionic/docker-ce_19.03.5~3-0~ubuntu-bionic_ppc64el.deb
-sudo apt-get remove docker*
-sudo apt-get autoclean
-sudo apt autoremove
 sudo apt install ./*.deb
 
 echo "=========> [CHECKING ENVIRONMENT] >>> "
