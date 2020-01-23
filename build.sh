@@ -18,7 +18,7 @@ printf "\n\Upgrading Docker...\n"
 
 printf "\n=========> [CLONNING MASTER AND PATCHING] >>>\n"
 git clone https://github.com/docker/docker-ce
-git checkout 19.03.5
+git checkout v19.03.5
 cd docker-ce && git apply -v --3way ../patches/*
 cd ../
 
