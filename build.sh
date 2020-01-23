@@ -21,7 +21,7 @@ git apply -v --3way ../patches/*
 
 printf "\n=========> [BUILDING <$sys> PACKAGES] >>>\n"
 cd $home/$dir
-sudo make VERSION=0.0.0 $sys
+sudo VERSION=0.0.0 make $sys
 
 echo "=========> [CHECKING <$sys> PACKAGES] >>>"
 ls $home/$bin_dir
