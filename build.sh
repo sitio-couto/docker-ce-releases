@@ -4,7 +4,7 @@ home=$(pwd)
 echo "=========> [UPGRADING DOCKER] >>>"
 # sudo apt update && sudo apt upgrade
 sudo snap install docker
-sudo docker version
+sudo service docker* restart
 
 # echo "=========> [CHECKING ENVIRONMENT] >>> "
 # printf "\nBuild Distro:\n"
