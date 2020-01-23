@@ -2,7 +2,7 @@ set -e
 home=$(pwd)
 
 echo "=========> [UPGRADING DOCKER] >>>"
-sudo apt update && sudo apt upgrade
+# sudo apt update && sudo apt upgrade
 sudo snap install docker
 sudo docker version
 
