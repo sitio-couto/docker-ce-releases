@@ -4,7 +4,7 @@ version="19.03.4"
 
 
 echo "=========> [UPGRADING DOCKER] >>>"
-sudo apt update && sudo apt upgrade docker
+sudo apt update && sudo apt upgrade docker-ce
 
 echo "=========> [CHECKING ENVIRONMENT] >>> "
 printf "\nBuild Distro:\n"
