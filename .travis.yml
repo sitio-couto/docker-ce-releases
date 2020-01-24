@@ -3,9 +3,10 @@ arch: ppc64le
 sudo: required
 dist: bionic
 
-before_install:
-  - sudo apt update
-  - sudo snap install docker
+addons:
+  apt:
+    packages:
+      - docker-ce
 
 matrix:
   include:
