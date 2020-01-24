@@ -1,7 +1,7 @@
 os: linux
 arch: ppc64le
 sudo: required
-dist: bionic
+dist: xenial
 service: docker
 
 # before_install:
