@@ -1,9 +1,11 @@
 set -e
 home=$(pwd)
+version="19.03.4"
+
 
 echo "=========> [UPGRADING DOCKER] >>>"
 # sudo apt update && sudo apt upgrade
-sudo snap install Docker
+sudo snap install docker
 
 echo "=========> [CHECKING ENVIRONMENT] >>> "
 printf "\nBuild Distro:\n"
@@ -17,7 +19,7 @@ sudo docker run hello-world | grep "Hello from Docker!"
 printf "\n=========> [CLONNING MASTER AND PATCHING] >>>\n"
 git clone https://github.com/docker/docker-ce
 cd $home/docker-ce
-git checkout v19.03.4
+git checkout v$version
 git apply -v --3way ../patches/*
 
 printf "\n=========> [BUILDING <$sys> PACKAGES] >>>\n"
