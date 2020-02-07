@@ -2,6 +2,9 @@
 
 set -e
 home=$(pwd)
+bin_dir=docker-ce/components/packaging/deb/debbuild/debian-stretch/
+dir=docker-ce/components/packaging/deb
+sys=ubuntu-bionic
 
 printf "\n\n=========> [INSTALLING DOCKER] >>>\n"
 sudo apt update
