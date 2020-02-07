@@ -11,6 +11,7 @@ wget -q https://oplab9.parqtec.unicamp.br/pub/ppc64el/docker/version-19.03.5/ubu
 wget -q https://oplab9.parqtec.unicamp.br/pub/ppc64el/docker/version-19.03.5/ubuntu-bionic/docker-ce_19.03.5~3-0~ubuntu-bionic_ppc64el.deb
 sudo apt install -y ./docker-ce-cli_19.03.5~3-0~ubuntu-bionic_ppc64el.deb 
 sudo apt install -y ./docker-ce_19.03.5~3-0~ubuntu-bionic_ppc64el.deb
+rm -f *.deb
 
 echo "=========> [CHECKING ENVIRONMENT] >>> "
 printf "\nBuild Distro:\n"
