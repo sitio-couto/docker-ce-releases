@@ -30,7 +30,7 @@ git apply -v --3way ../patches/*
 
 printf "\n\n=========> [BUILDING <$sys> PACKAGES] >>>\n"
 cd $home/$dir
-sudo VERSION=0.0.0 make $sys
+sudo make $sys
 
 printf "\n\n=========> [CHECKING <$sys> PACKAGES] >>>\n"
 ls $home/$bin_dir
