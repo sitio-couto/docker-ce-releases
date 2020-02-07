@@ -7,8 +7,8 @@ version="19.03.4"
 
 echo "=========> [INSTALLING DOCKER] >>>"
 sudo apt update
-wget https://oplab9.parqtec.unicamp.br/pub/ppc64el/docker/version-19.03.5/ubuntu-bionic/docker-ce-cli_19.03.5~3-0~ubuntu-bionic_ppc64el.deb
-wget https://oplab9.parqtec.unicamp.br/pub/ppc64el/docker/version-19.03.5/ubuntu-bionic/docker-ce_19.03.5~3-0~ubuntu-bionic_ppc64el.deb
+wget -q https://oplab9.parqtec.unicamp.br/pub/ppc64el/docker/version-19.03.5/ubuntu-bionic/docker-ce-cli_19.03.5~3-0~ubuntu-bionic_ppc64el.deb
+wget -q https://oplab9.parqtec.unicamp.br/pub/ppc64el/docker/version-19.03.5/ubuntu-bionic/docker-ce_19.03.5~3-0~ubuntu-bionic_ppc64el.deb
 sudo apt install -y ./docker-ce-cli_19.03.5~3-0~ubuntu-bionic_ppc64el.deb 
 sudo apt install -y ./docker-ce_19.03.5~3-0~ubuntu-bionic_ppc64el.deb
 
