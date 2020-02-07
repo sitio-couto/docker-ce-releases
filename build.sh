@@ -6,7 +6,7 @@ version="19.03.4"
 
 
 echo "=========> [UPGRADING DOCKER] >>>"
-apt update && apt upgrade
+sudo apt update && sudo apt upgrade
 exit
 
 # echo "=========> [CHECKING ENVIRONMENT] >>> "
