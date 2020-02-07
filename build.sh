@@ -1,3 +1,5 @@
+#!/bin/bash
+
 set -e
 home=$(pwd)
 version="19.03.4"
