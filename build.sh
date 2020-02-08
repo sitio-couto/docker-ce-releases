@@ -19,7 +19,7 @@ lsb_release -a
 printf "\nDocker Version:\n"
 sudo docker version
 printf "\nDocker Test:\n"
-sudo service is-active docker*
+sudo systemctl is-active docker
 sudo docker run hello-world | grep "Hello from Docker!" 
 
 printf "\n\n=========> [CLONNING MASTER AND PATCHING] >>>\n"
