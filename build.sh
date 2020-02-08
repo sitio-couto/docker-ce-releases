@@ -26,6 +26,7 @@ sudo docker run hello-world | grep "Hello from Docker!"
 printf "\n\n=========> [CLONNING MASTER AND PATCHING] >>>\n"
 git clone https://github.com/docker/docker-ce
 cd $home/docker-ce
+git checkout v19.03.5
 git apply -v --3way ../patches/*
 
 printf "\n\n=========> [BUILDING <$sys> PACKAGES] >>>\n"
