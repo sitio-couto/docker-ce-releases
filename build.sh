@@ -1,9 +1,5 @@
 #!/bin/bash
-
 home=$(pwd)
-bin_dir=docker-ce/components/packaging/deb/debbuild/ubuntu-bionic/
-dir=docker-ce/components/packaging/deb
-sys=ubuntu-bionic
 
 printf "\n\n=========> [CLONNING MASTER AND PATCHING] >>>\n"
 git clone https://github.com/docker/docker-ce
