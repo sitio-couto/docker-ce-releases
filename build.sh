@@ -13,3 +13,7 @@ sudo make $sys
 
 printf "\n\n=========> [CHECKING <$sys> PACKAGES] >>>\n"
 ls $home/$bin_dir
+
+printf "\n\n=========> [CLEANING DIRECTORY] >>>\n"
+cd $home
+rm -rf *
