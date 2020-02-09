@@ -13,7 +13,7 @@ git checkout v19.03.5
 
 printf "\n\n=========> [BUILDING <$sys> PACKAGES] >>>\n"
 cd $home/$dir
-sudo make $sys
+sudo VERSION=19.03.5 make $sys
 
 printf "\n\n=========> [CHECKING <$sys> PACKAGES] >>>\n"
 ls $home/$bin_dir
