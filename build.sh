@@ -13,6 +13,3 @@ sudo VERSION=0.0.0-dev make $sys
 
 printf "\n\n=========> [CHECKING <$sys> PACKAGES] >>>\n"
 ls $home/$bin_dir
-
-# Jenkins failed to remove root owned files, so the line below removes then manually
-sudo rm -rf $home/$bin_dir
