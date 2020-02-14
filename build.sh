@@ -15,8 +15,6 @@ printf "\n\n=========> [CHECKING <$sys> PACKAGES] >>>\n"
 if [[ $sys == centos ]] 
 then
     ls $home/$bin_dir
-    sudo rm -rf $home/$bin_dir
 else 
     ls $home/$bin_dir/$sys
-    sudo rm -rf $home/$bin_dir
 fi;
