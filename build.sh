@@ -9,7 +9,7 @@ git apply -v --3way ../patches/*
 
 printf "\n\n=========> [BUILDING <$sys> PACKAGES] >>>\n"
 cd $home/$dir
-sudo make $sys
+sudo VERSION=0.0.0-dev make $sys
 
 printf "\n\n=========> [CHECKING <$sys> PACKAGES] >>>\n"
 if [[ $sys == centos ]] 
