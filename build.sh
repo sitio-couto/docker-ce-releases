@@ -12,9 +12,4 @@ cd $home/$dir
 sudo VERSION=0.0.0-dev make $sys
 
 printf "\n\n=========> [CHECKING <$sys> PACKAGES] >>>\n"
-if [[ $sys == centos ]] 
-then
-    ls $home/$bin_dir
-else 
-    ls $home/$bin_dir/$sys
-fi;
+ls $home/$bin_dir
