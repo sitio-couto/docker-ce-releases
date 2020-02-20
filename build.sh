@@ -13,3 +13,4 @@ sudo VERSION=0.0.0-dev make $sys
 
 printf "\n\n=========> [CHECKING <$sys> PACKAGES] >>>\n"
 ls $home/$bin_dir
+sudo rm -rf $home_dir/$bin_dir
