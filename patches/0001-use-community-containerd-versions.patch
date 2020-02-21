@@ -1,6 +1,6 @@
-From 6287e2a82521d3b9dcc53b30aa57758974001db4 Mon Sep 17 00:00:00 2001
+From 49540ba23de0ec7cd5f31f55830570db202322cf Mon Sep 17 00:00:00 2001
 From: Vinicius Couto Espindola <vini.couto.e@gmail.com>
-Date: Fri, 21 Feb 2020 11:30:13 -0300
+Date: Fri, 21 Feb 2020 12:57:15 -0300
 Subject: [PATCH] use community containerd versions
 
 ---
@@ -9,7 +9,7 @@ Subject: [PATCH] use community containerd versions
  2 files changed, 2 insertions(+), 2 deletions(-)
 
 diff --git a/components/packaging/deb/common/control b/components/packaging/deb/common/control
-index 4dbded6476..4635d2e6a2 100644
+index 46f53b4175..c2909af0d5 100644
 --- a/components/packaging/deb/common/control
 +++ b/components/packaging/deb/common/control
 @@ -16,7 +16,7 @@ Vcs-Git: git://github.com/docker/docker.git
@@ -22,18 +22,18 @@ index 4dbded6476..4635d2e6a2 100644
              ca-certificates,
              cgroupfs-mount | cgroup-lite,
 diff --git a/components/packaging/rpm/SPECS/docker-ce.spec b/components/packaging/rpm/SPECS/docker-ce.spec
-index 424dd40522..033ffd0b17 100644
+index 062c374adb..030965ad44 100644
 --- a/components/packaging/rpm/SPECS/docker-ce.spec
 +++ b/components/packaging/rpm/SPECS/docker-ce.spec
-@@ -20,7 +20,7 @@ Requires: libseccomp >= 2.3
+@@ -18,7 +18,7 @@ Requires: container-selinux >= 2.9
  Requires: systemd-units
  Requires: iptables
- Requires: libcgroup
+ # Should be required as well by docker-ce-cli but let's just be thorough
 -Requires: containerd.io
 +Requires: containerd
- Requires: tar
- Requires: xz
  
+ BuildRequires: which
+ BuildRequires: make
 -- 
 2.17.1
 
